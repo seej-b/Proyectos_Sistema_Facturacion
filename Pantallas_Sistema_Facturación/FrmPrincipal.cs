@@ -14,14 +14,69 @@ namespace Pantallas_Sistema_Facturación
 {
     public partial class FrmPrincipal: MaterialForm
     {
+        Form formularioActivo = null;
         public FrmPrincipal()
         {
             InitializeComponent();
         }
 
+
+        private void AbrirFormulario(Form formulario)
+        {
+            Pnlcontenedor.Controls.Clear();
+
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+
+            Pnlcontenedor.Controls.Add(formulario);
+            Pnlcontenedor.Tag = formulario;
+
+            formulario.Show();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
+            AbrirFormulario(new frmEmpleados());
+        }
 
+        private void btnclientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmListaClientes());
+        }
+
+        private void Pnlcontenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmProductos());
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmCategoriaProductos());
+        }
+
+        private void btnFacturas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmFacturas());
+        }
+
+        private void btnInformes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmInformes());
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmRolEmpleados());
+        }
+
+        private void btnSeguridad_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmAdminSeguridad());
         }
     }
 }

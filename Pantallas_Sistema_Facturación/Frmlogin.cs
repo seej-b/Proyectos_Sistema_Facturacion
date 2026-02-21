@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pantallas_Sistema_Facturación
 {
-    public partial class Frmlogin: Form
+    public partial class FrmLogin : Form
     {
-        public Frmlogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -20,6 +20,35 @@ namespace Pantallas_Sistema_Facturación
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnValidar_Click(object sender, EventArgs e)
+        {
+            string usuario = txtUsuario.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            if (usuario == "" || password == "")
+            {
+                MessageBox.Show("Ingrese usuario y contraseña");
+                return;
+            }
+            //  usuario
+            if (usuario == "admin" && password == "123")
+            {
+                MessageBox.Show("Bienvenido");
+
+                // abrir menú
+                FrmPrincipal menu = new FrmPrincipal();
+                menu.Show();
+
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
+                txtPassword.Clear();
+                txtPassword.Focus();
+            }
         }
     }
 }
