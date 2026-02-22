@@ -78,5 +78,23 @@ namespace Pantallas_Sistema_Facturación
         {
             AbrirFormulario(new frmAdminSeguridad());
         }
+
+
+        private void btnAyuda_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmAyuda());
+        }
+
+        private void btnacerca_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmAcerca());
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            FrmLogin login = new FrmLogin();
+            login.Show();
+            this.Close();
+        }
     }
 }

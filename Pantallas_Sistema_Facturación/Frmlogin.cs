@@ -22,8 +22,9 @@ namespace Pantallas_Sistema_Facturación
             Application.Exit();
         }
 
-        private void btnValidar_Click(object sender, EventArgs e)
+        private void btnValidar_Click_1(object sender, EventArgs e)
         {
+
             string usuario = txtUsuario.Text.Trim();
             string password = txtPassword.Text.Trim();
 
@@ -32,12 +33,12 @@ namespace Pantallas_Sistema_Facturación
                 MessageBox.Show("Ingrese usuario y contraseña");
                 return;
             }
-            //  usuario
+
             if (usuario == "admin" && password == "123")
             {
                 MessageBox.Show("Bienvenido");
 
-                // abrir menú
+
                 FrmPrincipal menu = new FrmPrincipal();
                 menu.Show();
 
@@ -49,6 +50,7 @@ namespace Pantallas_Sistema_Facturación
                 txtPassword.Clear();
                 txtPassword.Focus();
             }
+
         }
     }
 }
