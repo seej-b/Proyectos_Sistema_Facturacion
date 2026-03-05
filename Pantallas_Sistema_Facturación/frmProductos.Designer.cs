@@ -44,8 +44,10 @@
             this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.cardAdministracionProductos = new MaterialSkin.Controls.MaterialCard();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.cardAdministracionProductos.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombreProducto
@@ -54,7 +56,7 @@
             this.txtNombreProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtNombreProducto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtNombreProducto.Depth = 0;
-            this.txtNombreProducto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtNombreProducto.HideSelection = true;
             this.txtNombreProducto.Hint = "Nombre Producto";
             this.txtNombreProducto.LeadingIcon = null;
@@ -112,7 +114,7 @@
             this.txtCantidadStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtCantidadStock.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtCantidadStock.Depth = 0;
-            this.txtCantidadStock.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCantidadStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtCantidadStock.HideSelection = true;
             this.txtCantidadStock.Hint = "Cantidad Stock ";
             this.txtCantidadStock.LeadingIcon = null;
@@ -141,7 +143,7 @@
             this.txtPrecioCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtPrecioCompra.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPrecioCompra.Depth = 0;
-            this.txtPrecioCompra.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrecioCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPrecioCompra.HideSelection = true;
             this.txtPrecioCompra.Hint = "Precio Compra";
             this.txtPrecioCompra.LeadingIcon = null;
@@ -170,7 +172,7 @@
             this.txtCodigoReferencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtCodigoReferencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtCodigoReferencia.Depth = 0;
-            this.txtCodigoReferencia.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCodigoReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtCodigoReferencia.HideSelection = true;
             this.txtCodigoReferencia.Hint = "Codigo Referencia";
             this.txtCodigoReferencia.LeadingIcon = null;
@@ -202,7 +204,7 @@
             this.cmbCategoria.DropDownHeight = 174;
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.DropDownWidth = 121;
-            this.cmbCategoria.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.IntegralHeight = false;
@@ -219,9 +221,9 @@
             // 
             this.lblAdministracionProductos.AutoSize = true;
             this.lblAdministracionProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdministracionProductos.Location = new System.Drawing.Point(253, 34);
+            this.lblAdministracionProductos.Location = new System.Drawing.Point(250, 9);
             this.lblAdministracionProductos.Name = "lblAdministracionProductos";
-            this.lblAdministracionProductos.Size = new System.Drawing.Size(473, 39);
+            this.lblAdministracionProductos.Size = new System.Drawing.Size(456, 38);
             this.lblAdministracionProductos.TabIndex = 6;
             this.lblAdministracionProductos.Text = "Administracion De Producctos";
             // 
@@ -241,7 +243,7 @@
             this.txtRutaImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtRutaImagen.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtRutaImagen.Depth = 0;
-            this.txtRutaImagen.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtRutaImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtRutaImagen.HideSelection = true;
             this.txtRutaImagen.Hint = "Ruta Imagen";
             this.txtRutaImagen.LeadingIcon = null;
@@ -369,7 +371,7 @@
             this.cardAdministracionProductos.Controls.Add(this.txtCantidadStock);
             this.cardAdministracionProductos.Depth = 0;
             this.cardAdministracionProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cardAdministracionProductos.Location = new System.Drawing.Point(65, 87);
+            this.cardAdministracionProductos.Location = new System.Drawing.Point(59, 61);
             this.cardAdministracionProductos.Margin = new System.Windows.Forms.Padding(14);
             this.cardAdministracionProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardAdministracionProductos.Name = "cardAdministracionProductos";
@@ -380,25 +382,36 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.dgvProductos);
             this.materialCard1.Controls.Add(this.btnSalir);
             this.materialCard1.Controls.Add(this.btnActualizar);
             this.materialCard1.Depth = 0;
             this.materialCard1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(0, 477);
+            this.materialCard1.Location = new System.Drawing.Point(0, 462);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(942, 183);
+            this.materialCard1.Size = new System.Drawing.Size(968, 341);
             this.materialCard1.TabIndex = 15;
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(-15, 81);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.RowTemplate.Height = 24;
+            this.dgvProductos.Size = new System.Drawing.Size(983, 260);
+            this.dgvProductos.TabIndex = 13;
             // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(942, 660);
+            this.ClientSize = new System.Drawing.Size(968, 803);
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.cardAdministracionProductos);
             this.Controls.Add(this.lblAdministracionProductos);
@@ -409,6 +422,7 @@
             this.cardAdministracionProductos.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,5 +446,6 @@
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
         private MaterialSkin.Controls.MaterialCard cardAdministracionProductos;
         private MaterialSkin.Controls.MaterialCard materialCard1;
+        private System.Windows.Forms.DataGridView dgvProductos;
     }
 }
