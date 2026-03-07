@@ -67,9 +67,9 @@
             this.lblTitulo.Location = new System.Drawing.Point(311, 18);
             this.lblTitulo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(134, 19);
+            this.lblTitulo.Size = new System.Drawing.Size(113, 19);
             this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "VALIDAR USUARIO";
+            this.lblTitulo.Text = "INICIAR SESIÓN";
             // 
             // txtUsuario
             // 
@@ -95,7 +95,7 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Depth = 0;
             this.txtPassword.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPassword.Hint = "Password";
+            this.txtPassword.Hint = "Contraseña";
             this.txtPassword.LeadingIcon = null;
             this.txtPassword.Location = new System.Drawing.Point(286, 125);
             this.txtPassword.MaxLength = 50;
@@ -137,13 +137,13 @@
             this.btnCancelar.Depth = 0;
             this.btnCancelar.HighEmphasis = true;
             this.btnCancelar.Icon = null;
-            this.btnCancelar.Location = new System.Drawing.Point(384, 199);
+            this.btnCancelar.Location = new System.Drawing.Point(377, 199);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCancelar.Size = new System.Drawing.Size(75, 36);
+            this.btnCancelar.Size = new System.Drawing.Size(83, 36);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;

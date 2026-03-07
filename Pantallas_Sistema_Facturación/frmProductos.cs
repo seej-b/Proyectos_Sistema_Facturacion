@@ -363,5 +363,15 @@ namespace Pantallas_Sistema_Facturación
                 MessageBox.Show("Error en búsqueda: " + ex.Message);
             }
         }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
     }
 }

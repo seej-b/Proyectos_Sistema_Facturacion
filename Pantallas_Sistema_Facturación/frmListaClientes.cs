@@ -19,6 +19,41 @@ namespace Pantallas_Sistema_Facturación
         {
             InitializeComponent();
             MostrarClientes();
+
+            dgvClientes.BorderStyle = BorderStyle.None;
+            dgvClientes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvClientes.BackgroundColor = Color.White;
+
+            dgvClientes.EnableHeadersVisualStyles = false;
+            dgvClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            dgvClientes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 150, 243);
+            dgvClientes.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvClientes.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+            dgvClientes.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dgvClientes.DefaultCellStyle.ForeColor = Color.Black;
+            dgvClientes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215);
+            dgvClientes.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            dgvClientes.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvClientes.MultiSelect = false;
+
+            dgvClientes.RowTemplate.Height = 30;
+
+
+            dgvClientes.Columns["id_cliente"].HeaderText = "ID";
+            dgvClientes.Columns["nombre"].HeaderText = "Nombre";
+            dgvClientes.Columns["telefono"].HeaderText = "Teléfono";
+            dgvClientes.Columns["direccion"].HeaderText = "Dirección";
+            dgvClientes.Columns["email"].HeaderText = "Correo";
+
+
+            dgvClientes.Columns["id_cliente"].Visible = false;
         }
 
         private void MostrarClientes()
@@ -197,6 +232,11 @@ namespace Pantallas_Sistema_Facturación
             {
                 MessageBox.Show("Error en búsqueda: " + ex.Message);
             }
+        }
+
+        private void txtLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }

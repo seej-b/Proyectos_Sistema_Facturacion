@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Pantallas_Sistema_Facturación
 {
     public partial class FrmLogin : Form
     {
+        Conexion cn = new Conexion();
         public FrmLogin()
         {
             InitializeComponent();
@@ -25,30 +27,57 @@ namespace Pantallas_Sistema_Facturación
         private void btnValidar_Click_1(object sender, EventArgs e)
         {
 
-            string usuario = txtUsuario.Text.Trim();
-            string password = txtPassword.Text.Trim();
-
-            if (usuario == "" || password == "")
+            if (txtUsuario.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Ingrese usuario y contraseña");
                 return;
             }
 
-            if (usuario == "admin" && password == "123")
+            try
             {
-                MessageBox.Show("Bienvenido");
+                NpgsqlConnection conexion = cn.conectar();
 
+                string query = @"SELECT e.nombre, e.cargo
+                         FROM usuarios u
+                         INNER JOIN empleados e
+                         ON u.id_empleado = e.id_empleado
+                         WHERE u.usuario = @usuario 
+                         AND u.clave = @clave";
 
-                FrmPrincipal menu = new FrmPrincipal();
-                menu.Show();
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conexion);
 
-                this.Hide();
+                cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                cmd.Parameters.AddWithValue("@clave", txtPassword.Text);
+
+                NpgsqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string nombre = reader["nombre"].ToString();
+                    string cargo = reader["cargo"].ToString();
+
+                    MessageBox.Show("Bienvenido " + nombre + " (" + cargo + ")",
+                                    "Acceso permitido",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                    FrmPrincipal frm = new FrmPrincipal();
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+
+                conexion.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
-                txtPassword.Clear();
-                txtPassword.Focus();
+                MessageBox.Show("Error: " + ex.Message);
             }
 
         }

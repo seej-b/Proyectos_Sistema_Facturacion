@@ -33,19 +33,18 @@
             this.txtCantidadStock = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtPrecioCompra = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtCodigoReferencia = new MaterialSkin.Controls.MaterialTextBox2();
-            this.lblAdministracionProductos = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtDetallesProducto = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.btnActualizar = new MaterialSkin.Controls.MaterialButton();
-            this.btnSalir = new MaterialSkin.Controls.MaterialButton();
-            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.txtLimpiar = new MaterialSkin.Controls.MaterialButton();
             this.cardAdministracionProductos = new MaterialSkin.Controls.MaterialCard();
-            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.cmbCategoria = new MaterialSkin.Controls.MaterialComboBox();
-            this.txtAgregar = new MaterialSkin.Controls.MaterialButton();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.txtEliminar = new MaterialSkin.Controls.MaterialButton();
+            this.txtAgregar = new MaterialSkin.Controls.MaterialButton();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.cardAdministracionProductos.SuspendLayout();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -62,7 +61,7 @@
             this.txtNombreProducto.Hint = "Producto";
             this.txtNombreProducto.LeadingIcon = null;
             this.txtNombreProducto.Location = new System.Drawing.Point(25, 46);
-            this.txtNombreProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreProducto.MaxLength = 32767;
             this.txtNombreProducto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNombreProducto.Name = "txtNombreProducto";
@@ -92,7 +91,7 @@
             this.txtPrecioVenta.Hint = "Precio Venta";
             this.txtPrecioVenta.LeadingIcon = null;
             this.txtPrecioVenta.Location = new System.Drawing.Point(25, 178);
-            this.txtPrecioVenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecioVenta.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecioVenta.MaxLength = 32767;
             this.txtPrecioVenta.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
@@ -122,7 +121,7 @@
             this.txtCantidadStock.Hint = "Stock ";
             this.txtCantidadStock.LeadingIcon = null;
             this.txtCantidadStock.Location = new System.Drawing.Point(25, 222);
-            this.txtCantidadStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadStock.MaxLength = 32767;
             this.txtCantidadStock.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCantidadStock.Name = "txtCantidadStock";
@@ -152,7 +151,7 @@
             this.txtPrecioCompra.Hint = "Precio Compra";
             this.txtPrecioCompra.LeadingIcon = null;
             this.txtPrecioCompra.Location = new System.Drawing.Point(25, 134);
-            this.txtPrecioCompra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecioCompra.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecioCompra.MaxLength = 32767;
             this.txtPrecioCompra.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPrecioCompra.Name = "txtPrecioCompra";
@@ -182,7 +181,7 @@
             this.txtCodigoReferencia.Hint = "Codigo Refe.";
             this.txtCodigoReferencia.LeadingIcon = null;
             this.txtCodigoReferencia.Location = new System.Drawing.Point(25, 90);
-            this.txtCodigoReferencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigoReferencia.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigoReferencia.MaxLength = 32767;
             this.txtCodigoReferencia.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCodigoReferencia.Name = "txtCodigoReferencia";
@@ -201,22 +200,11 @@
             this.txtCodigoReferencia.TrailingIcon = null;
             this.txtCodigoReferencia.UseSystemPasswordChar = false;
             // 
-            // lblAdministracionProductos
-            // 
-            this.lblAdministracionProductos.AutoSize = true;
-            this.lblAdministracionProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdministracionProductos.Location = new System.Drawing.Point(188, 7);
-            this.lblAdministracionProductos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAdministracionProductos.Name = "lblAdministracionProductos";
-            this.lblAdministracionProductos.Size = new System.Drawing.Size(378, 31);
-            this.lblAdministracionProductos.TabIndex = 6;
-            this.lblAdministracionProductos.Text = "Administracion De Producctos";
-            // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(320, 46);
+            this.lblCategoria.Location = new System.Drawing.Point(408, 145);
             this.lblCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(90, 24);
@@ -233,8 +221,8 @@
             this.txtBuscar.HideSelection = true;
             this.txtBuscar.Hint = "Buscar producto...";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(333, 94);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Location = new System.Drawing.Point(229, 46);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 32767;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Name = "txtBuscar";
@@ -263,8 +251,8 @@
             this.txtDetallesProducto.Depth = 0;
             this.txtDetallesProducto.HideSelection = true;
             this.txtDetallesProducto.Hint = "Detalles";
-            this.txtDetallesProducto.Location = new System.Drawing.Point(334, 166);
-            this.txtDetallesProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDetallesProducto.Location = new System.Drawing.Point(229, 189);
+            this.txtDetallesProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtDetallesProducto.MaxLength = 32767;
             this.txtDetallesProducto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDetallesProducto.Name = "txtDetallesProducto";
@@ -301,47 +289,33 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // btnSalir
+            // txtLimpiar
             // 
-            this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSalir.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnSalir.Depth = 0;
-            this.btnSalir.HighEmphasis = true;
-            this.btnSalir.Icon = null;
-            this.btnSalir.Location = new System.Drawing.Point(438, 16);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSalir.Size = new System.Drawing.Size(64, 36);
-            this.btnSalir.TabIndex = 12;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnSalir.UseAccentColor = false;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckbox1
-            // 
-            this.materialCheckbox1.AutoSize = true;
-            this.materialCheckbox1.Depth = 0;
-            this.materialCheckbox1.Location = new System.Drawing.Point(25, 11);
-            this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox1.Name = "materialCheckbox1";
-            this.materialCheckbox1.ReadOnly = false;
-            this.materialCheckbox1.Ripple = true;
-            this.materialCheckbox1.Size = new System.Drawing.Size(35, 37);
-            this.materialCheckbox1.TabIndex = 13;
-            this.materialCheckbox1.UseVisualStyleBackColor = true;
+            this.txtLimpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtLimpiar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.txtLimpiar.Depth = 0;
+            this.txtLimpiar.HighEmphasis = true;
+            this.txtLimpiar.Icon = null;
+            this.txtLimpiar.Location = new System.Drawing.Point(511, 58);
+            this.txtLimpiar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtLimpiar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtLimpiar.Name = "txtLimpiar";
+            this.txtLimpiar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.txtLimpiar.Size = new System.Drawing.Size(79, 36);
+            this.txtLimpiar.TabIndex = 12;
+            this.txtLimpiar.Text = "Limpiar";
+            this.txtLimpiar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.txtLimpiar.UseAccentColor = false;
+            this.txtLimpiar.UseVisualStyleBackColor = true;
+            this.txtLimpiar.Click += new System.EventHandler(this.txtLimpiar_Click);
             // 
             // cardAdministracionProductos
             // 
             this.cardAdministracionProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cardAdministracionProductos.Controls.Add(this.cmbCategoria);
             this.cardAdministracionProductos.Controls.Add(this.txtNombreProducto);
-            this.cardAdministracionProductos.Controls.Add(this.materialCheckbox1);
             this.cardAdministracionProductos.Controls.Add(this.txtCodigoReferencia);
+            this.cardAdministracionProductos.Controls.Add(this.txtLimpiar);
             this.cardAdministracionProductos.Controls.Add(this.lblCategoria);
             this.cardAdministracionProductos.Controls.Add(this.txtBuscar);
             this.cardAdministracionProductos.Controls.Add(this.txtDetallesProducto);
@@ -358,45 +332,6 @@
             this.cardAdministracionProductos.Size = new System.Drawing.Size(626, 294);
             this.cardAdministracionProductos.TabIndex = 14;
             // 
-            // materialCard1
-            // 
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.txtEliminar);
-            this.materialCard1.Controls.Add(this.txtAgregar);
-            this.materialCard1.Controls.Add(this.dgvProductos);
-            this.materialCard1.Controls.Add(this.btnSalir);
-            this.materialCard1.Controls.Add(this.btnActualizar);
-            this.materialCard1.Depth = 0;
-            this.materialCard1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(0, 332);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
-            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
-            this.materialCard1.Size = new System.Drawing.Size(726, 277);
-            this.materialCard1.TabIndex = 15;
-            // 
-            // dgvProductos
-            // 
-            this.dgvProductos.AllowUserToAddRows = false;
-            this.dgvProductos.AllowUserToDeleteRows = false;
-            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(0, 66);
-            this.dgvProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgvProductos.MultiSelect = false;
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.RowHeadersVisible = false;
-            this.dgvProductos.RowHeadersWidth = 51;
-            this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(737, 211);
-            this.dgvProductos.TabIndex = 13;
-            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
-            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
-            // 
             // cmbCategoria
             // 
             this.cmbCategoria.AutoResize = false;
@@ -406,38 +341,37 @@
             this.cmbCategoria.DropDownHeight = 174;
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.DropDownWidth = 121;
-            this.cmbCategoria.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.IntegralHeight = false;
             this.cmbCategoria.ItemHeight = 43;
-            this.cmbCategoria.Location = new System.Drawing.Point(415, 33);
+            this.cmbCategoria.Location = new System.Drawing.Point(229, 132);
             this.cmbCategoria.MaxDropDownItems = 4;
             this.cmbCategoria.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(162, 49);
             this.cmbCategoria.StartIndex = 0;
             this.cmbCategoria.TabIndex = 15;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
-            // txtAgregar
+            // materialCard1
             // 
-            this.txtAgregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.txtAgregar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.txtAgregar.Depth = 0;
-            this.txtAgregar.HighEmphasis = true;
-            this.txtAgregar.Icon = null;
-            this.txtAgregar.Location = new System.Drawing.Point(44, 16);
-            this.txtAgregar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtAgregar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtAgregar.Name = "txtAgregar";
-            this.txtAgregar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtAgregar.Size = new System.Drawing.Size(88, 36);
-            this.txtAgregar.TabIndex = 16;
-            this.txtAgregar.Text = "Agregar";
-            this.txtAgregar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.txtAgregar.UseAccentColor = false;
-            this.txtAgregar.UseVisualStyleBackColor = true;
-            this.txtAgregar.Click += new System.EventHandler(this.txtAgregar_Click);
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.txtEliminar);
+            this.materialCard1.Controls.Add(this.txtAgregar);
+            this.materialCard1.Controls.Add(this.dgvProductos);
+            this.materialCard1.Controls.Add(this.btnActualizar);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(0, 381);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.materialCard1.Size = new System.Drawing.Size(744, 228);
+            this.materialCard1.TabIndex = 15;
             // 
             // txtEliminar
             // 
@@ -459,16 +393,69 @@
             this.txtEliminar.UseVisualStyleBackColor = true;
             this.txtEliminar.Click += new System.EventHandler(this.txtEliminar_Click);
             // 
+            // txtAgregar
+            // 
+            this.txtAgregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtAgregar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.txtAgregar.Depth = 0;
+            this.txtAgregar.HighEmphasis = true;
+            this.txtAgregar.Icon = null;
+            this.txtAgregar.Location = new System.Drawing.Point(44, 16);
+            this.txtAgregar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtAgregar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtAgregar.Name = "txtAgregar";
+            this.txtAgregar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.txtAgregar.Size = new System.Drawing.Size(88, 36);
+            this.txtAgregar.TabIndex = 16;
+            this.txtAgregar.Text = "Agregar";
+            this.txtAgregar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.txtAgregar.UseAccentColor = false;
+            this.txtAgregar.UseVisualStyleBackColor = true;
+            this.txtAgregar.Click += new System.EventHandler(this.txtAgregar_Click);
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToDeleteRows = false;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(42, 66);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvProductos.MultiSelect = false;
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.RowHeadersVisible = false;
+            this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.RowTemplate.Height = 24;
+            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductos.Size = new System.Drawing.Size(737, 211);
+            this.dgvProductos.TabIndex = 13;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(288, 20);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(228, 19);
+            this.materialLabel1.TabIndex = 17;
+            this.materialLabel1.Text = "ADMINISTRACION PRODUCTOS";
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(726, 609);
+            this.ClientSize = new System.Drawing.Size(744, 609);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.cardAdministracionProductos);
-            this.Controls.Add(this.lblAdministracionProductos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion De Productos";
@@ -490,18 +477,17 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtCantidadStock;
         private MaterialSkin.Controls.MaterialTextBox2 txtPrecioCompra;
         private MaterialSkin.Controls.MaterialTextBox2 txtCodigoReferencia;
-        private System.Windows.Forms.Label lblAdministracionProductos;
         private System.Windows.Forms.Label lblCategoria;
         private MaterialSkin.Controls.MaterialTextBox2 txtBuscar;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDetallesProducto;
         private MaterialSkin.Controls.MaterialButton btnActualizar;
-        private MaterialSkin.Controls.MaterialButton btnSalir;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
+        private MaterialSkin.Controls.MaterialButton txtLimpiar;
         private MaterialSkin.Controls.MaterialCard cardAdministracionProductos;
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private System.Windows.Forms.DataGridView dgvProductos;
         private MaterialSkin.Controls.MaterialComboBox cmbCategoria;
         private MaterialSkin.Controls.MaterialButton txtAgregar;
         private MaterialSkin.Controls.MaterialButton txtEliminar;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }
