@@ -20,6 +20,68 @@ namespace Pantallas_Sistema_Facturación
             InitializeComponent();
         }
 
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+            CargarCategorias();
+            ListarProductos();
+            EstiloTabla();
+        }
+
+        void EstiloTabla()
+        {
+            dgvProductos.BorderStyle = BorderStyle.None;
+            dgvProductos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvProductos.BackgroundColor = Color.White;
+
+            dgvProductos.EnableHeadersVisualStyles = false;
+            dgvProductos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            dgvProductos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 150, 243);
+            dgvProductos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvProductos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+            dgvProductos.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dgvProductos.DefaultCellStyle.ForeColor = Color.Black;
+            dgvProductos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215);
+            dgvProductos.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            dgvProductos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.MultiSelect = false;
+
+            dgvProductos.RowTemplate.Height = 30;
+
+            dgvProductos.Columns["id_producto"].HeaderText = "ID";
+            dgvProductos.Columns["nombre"].HeaderText = "Producto";
+            dgvProductos.Columns["codigo_referencia"].HeaderText = "Referencia";
+            dgvProductos.Columns["precio_compra"].HeaderText = "Precio Compra";
+            dgvProductos.Columns["precio_venta"].HeaderText = "Precio Venta";
+            dgvProductos.Columns["stock"].HeaderText = "Stock";
+            dgvProductos.Columns["detalles"].HeaderText = "Detalles";
+            dgvProductos.Columns["nombre_categoria"].HeaderText = "Categoría";
+
+
+            dgvProductos.Columns["id_producto"].Visible = false;
+
+
+            foreach (DataGridViewRow fila in dgvProductos.Rows)
+            {
+                if (fila.Cells["stock"].Value != null)
+                {
+                    int stock = Convert.ToInt32(fila.Cells["stock"].Value);
+
+                    if (stock <= 5)
+                    {
+                        fila.Cells["stock"].Style.ForeColor = Color.Red;
+                        fila.Cells["stock"].Style.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                    }
+                }
+            }
+        }
+
         void ListarProductos()
         {
             try
@@ -78,88 +140,6 @@ namespace Pantallas_Sistema_Facturación
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void Limpiar()
-        {
-            txtNombreProducto.Clear();
-            txtCodigoReferencia.Clear();
-            txtPrecioCompra.Clear();
-            txtPrecioVenta.Clear();
-            txtCantidadStock.Clear();
-            txtDetallesProducto.Clear();
-
-            cmbCategoria.SelectedIndex = 0;
-
-            idProducto = 0;
-        }
-
-
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void frmProductos_Load(object sender, EventArgs e)
-        {
-            CargarCategorias();
-            ListarProductos();
-
-            dgvProductos.BorderStyle = BorderStyle.None;
-            dgvProductos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvProductos.BackgroundColor = Color.White;
-
-            dgvProductos.EnableHeadersVisualStyles = false;
-            dgvProductos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-
-            dgvProductos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 150, 243);
-            dgvProductos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvProductos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-
-            dgvProductos.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            dgvProductos.DefaultCellStyle.ForeColor = Color.Black;
-            dgvProductos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215);
-            dgvProductos.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            dgvProductos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
-
-            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProductos.MultiSelect = false;
-
-            dgvProductos.RowTemplate.Height = 30;
-
-            // ===== CAMBIAR NOMBRES DE COLUMNAS =====
-
-            dgvProductos.Columns["id_producto"].HeaderText = "ID";
-            dgvProductos.Columns["nombre"].HeaderText = "Producto";
-            dgvProductos.Columns["codigo_referencia"].HeaderText = "Referencia";
-            dgvProductos.Columns["precio_compra"].HeaderText = "Precio Compra";
-            dgvProductos.Columns["precio_venta"].HeaderText = "Precio Venta";
-            dgvProductos.Columns["stock"].HeaderText = "Stock";
-            dgvProductos.Columns["detalles"].HeaderText = "Detalles";
-            dgvProductos.Columns["nombre_categoria"].HeaderText = "Categoría";
-
-            // ===== OCULTAR ID =====
-
-            dgvProductos.Columns["id_producto"].Visible = false;
-
-            // ===== STOCK BAJO EN ROJO =====
-
-            foreach (DataGridViewRow fila in dgvProductos.Rows)
-            {
-                if (fila.Cells["stock"].Value != null)
-                {
-                    int stock = Convert.ToInt32(fila.Cells["stock"].Value);
-
-                    if (stock <= 5)
-                    {
-                        fila.Cells["stock"].Style.ForeColor = Color.Red;
-                        fila.Cells["stock"].Style.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                    }
-                }
             }
         }
 
@@ -232,7 +212,6 @@ namespace Pantallas_Sistema_Facturación
         {
             try
             {
-                // Validar campos obligatorios
                 if (txtNombreProducto.Text == "" || txtCodigoReferencia.Text == "")
                 {
                     MessageBox.Show("Debe completar los campos obligatorios");
@@ -262,10 +241,8 @@ namespace Pantallas_Sistema_Facturación
 
                 conexion.Close();
 
-                // Actualizar tabla
                 ListarProductos();
 
-                // Limpiar formulario
                 Limpiar();
             }
             catch (Exception ex)
@@ -364,14 +341,34 @@ namespace Pantallas_Sistema_Facturación
             }
         }
 
-        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        public void Limpiar()
         {
+            txtNombreProducto.Clear();
+            txtCodigoReferencia.Clear();
+            txtPrecioCompra.Clear();
+            txtPrecioVenta.Clear();
+            txtCantidadStock.Clear();
+            txtDetallesProducto.Clear();
 
+            cmbCategoria.SelectedIndex = 0;
+
+            idProducto = 0;
         }
 
         private void txtLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
-using System.Data;
 
 namespace Pantallas_Sistema_Facturación
 {
@@ -18,8 +17,16 @@ namespace Pantallas_Sistema_Facturación
         public frmListaClientes()
         {
             InitializeComponent();
-            MostrarClientes();
+        }
 
+        private void frmListaClientes_Load(object sender, EventArgs e)
+        {
+            MostrarClientes();
+            EstiloTabla();
+        }
+
+        void EstiloTabla()
+        {
             dgvClientes.BorderStyle = BorderStyle.None;
             dgvClientes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvClientes.BackgroundColor = Color.White;
@@ -70,29 +77,6 @@ namespace Pantallas_Sistema_Facturación
             dgvClientes.DataSource = dt;
 
             conexion.Close();
-        }
-
-        private void LimpiarCampos()
-        {
-            txtNombre.Clear();
-            txtTelefono.Clear();
-            txtDireccion.Clear();
-            txtEmail.Clear();
-        }
-
-        private void materialLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmListaClientes_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -234,9 +218,27 @@ namespace Pantallas_Sistema_Facturación
             }
         }
 
+        private void LimpiarCampos()
+        {
+            txtNombre.Clear();
+            txtTelefono.Clear();
+            txtDireccion.Clear();
+            txtEmail.Clear();
+        }
+
         private void txtLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
