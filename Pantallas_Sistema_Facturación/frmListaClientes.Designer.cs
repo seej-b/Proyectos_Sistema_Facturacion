@@ -32,15 +32,15 @@
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.btnNuevo = new MaterialSkin.Controls.MaterialButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialButton();
-            this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOCUMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EDITAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.BORRAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtBuscarCliente = new MaterialSkin.Controls.MaterialTextBox2();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.BtnEditar = new MaterialSkin.Controls.MaterialButton();
+            this.BtnEliminar = new MaterialSkin.Controls.MaterialButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -48,7 +48,8 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(418, 37);
+            this.materialLabel1.Location = new System.Drawing.Point(314, 30);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(207, 19);
@@ -65,12 +66,12 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(395, 131);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.Location = new System.Drawing.Point(317, 97);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(100, 36);
+            this.materialButton1.Size = new System.Drawing.Size(75, 29);
             this.materialButton1.TabIndex = 2;
             this.materialButton1.Text = "Buscar";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -85,17 +86,18 @@
             this.btnNuevo.Depth = 0;
             this.btnNuevo.HighEmphasis = true;
             this.btnNuevo.Icon = null;
-            this.btnNuevo.Location = new System.Drawing.Point(839, 131);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnNuevo.Location = new System.Drawing.Point(622, 153);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnNuevo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnNuevo.Size = new System.Drawing.Size(100, 36);
+            this.btnNuevo.Size = new System.Drawing.Size(75, 20);
             this.btnNuevo.TabIndex = 3;
-            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Text = "Agregar";
             this.btnNuevo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnNuevo.UseAccentColor = false;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnSalir
             // 
@@ -105,124 +107,161 @@
             this.btnSalir.Depth = 0;
             this.btnSalir.HighEmphasis = true;
             this.btnSalir.Icon = null;
-            this.btnSalir.Location = new System.Drawing.Point(795, 416);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalir.Location = new System.Drawing.Point(596, 338);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSalir.Size = new System.Drawing.Size(100, 36);
+            this.btnSalir.Size = new System.Drawing.Size(75, 29);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSalir.UseAccentColor = false;
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // txtBuscar
+            // txtBuscarCliente
             // 
-            this.txtBuscar.AnimateReadOnly = false;
-            this.txtBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtBuscar.Depth = 0;
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBuscar.HideSelection = true;
-            this.txtBuscar.Hint = "Buscar por cliente";
-            this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(47, 119);
-            this.txtBuscar.MaxLength = 32767;
-            this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.PasswordChar = '\0';
-            this.txtBuscar.PrefixSuffixText = null;
-            this.txtBuscar.ReadOnly = false;
-            this.txtBuscar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBuscar.SelectedText = "";
-            this.txtBuscar.SelectionLength = 0;
-            this.txtBuscar.SelectionStart = 0;
-            this.txtBuscar.ShortcutsEnabled = true;
-            this.txtBuscar.Size = new System.Drawing.Size(269, 48);
-            this.txtBuscar.TabIndex = 5;
-            this.txtBuscar.TabStop = false;
-            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtBuscar.TrailingIcon = null;
-            this.txtBuscar.UseSystemPasswordChar = false;
+            this.txtBuscarCliente.AnimateReadOnly = false;
+            this.txtBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtBuscarCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtBuscarCliente.Depth = 0;
+            this.txtBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBuscarCliente.HideSelection = true;
+            this.txtBuscarCliente.Hint = "Buscar por cliente";
+            this.txtBuscarCliente.LeadingIcon = null;
+            this.txtBuscarCliente.Location = new System.Drawing.Point(35, 97);
+            this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarCliente.MaxLength = 32767;
+            this.txtBuscarCliente.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.PasswordChar = '\0';
+            this.txtBuscarCliente.PrefixSuffixText = null;
+            this.txtBuscarCliente.ReadOnly = false;
+            this.txtBuscarCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBuscarCliente.SelectedText = "";
+            this.txtBuscarCliente.SelectionLength = 0;
+            this.txtBuscarCliente.SelectionStart = 0;
+            this.txtBuscarCliente.ShortcutsEnabled = true;
+            this.txtBuscarCliente.Size = new System.Drawing.Size(202, 48);
+            this.txtBuscarCliente.TabIndex = 5;
+            this.txtBuscarCliente.TabStop = false;
+            this.txtBuscarCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtBuscarCliente.TrailingIcon = null;
+            this.txtBuscarCliente.UseSystemPasswordChar = false;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // dataGridView1
+            // dgvClientes
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.CLIENTE,
-            this.DOCUMENTO,
-            this.TELEFONO,
-            this.EDITAR,
-            this.BORRAR});
-            this.dataGridView1.Location = new System.Drawing.Point(47, 187);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(892, 206);
-            this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvClientes.AllowUserToOrderColumns = true;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(35, 152);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.RowHeadersWidth = 51;
+            this.dgvClientes.RowTemplate.Height = 24;
+            this.dgvClientes.Size = new System.Drawing.Size(669, 167);
+            this.dgvClientes.TabIndex = 6;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // ID
+            // txtNombre
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 80;
+            this.txtNombre.Location = new System.Drawing.Point(35, 152);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(152, 20);
+            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // CLIENTE
+            // txtTelefono
             // 
-            this.CLIENTE.HeaderText = "CLIENTE";
-            this.CLIENTE.MinimumWidth = 6;
-            this.CLIENTE.Name = "CLIENTE";
-            this.CLIENTE.Width = 170;
+            this.txtTelefono.Location = new System.Drawing.Point(185, 152);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(113, 20);
+            this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.Tag = "";
+            this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // DOCUMENTO
+            // txtDireccion
             // 
-            this.DOCUMENTO.HeaderText = "DOCUMENTO";
-            this.DOCUMENTO.MinimumWidth = 6;
-            this.DOCUMENTO.Name = "DOCUMENTO";
-            this.DOCUMENTO.Width = 170;
+            this.txtDireccion.Location = new System.Drawing.Point(297, 152);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(113, 20);
+            this.txtDireccion.TabIndex = 9;
+            this.txtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TELEFONO
+            // txtEmail
             // 
-            this.TELEFONO.HeaderText = "TELEFONO";
-            this.TELEFONO.MinimumWidth = 6;
-            this.TELEFONO.Name = "TELEFONO";
-            this.TELEFONO.Width = 170;
+            this.txtEmail.Location = new System.Drawing.Point(409, 152);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(121, 20);
+            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // EDITAR
+            // BtnEditar
             // 
-            this.EDITAR.HeaderText = "EDITAR";
-            this.EDITAR.MinimumWidth = 6;
-            this.EDITAR.Name = "EDITAR";
-            this.EDITAR.Width = 125;
+            this.BtnEditar.AutoSize = false;
+            this.BtnEditar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnEditar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BtnEditar.Depth = 0;
+            this.BtnEditar.HighEmphasis = true;
+            this.BtnEditar.Icon = null;
+            this.BtnEditar.Location = new System.Drawing.Point(537, 153);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.BtnEditar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BtnEditar.Size = new System.Drawing.Size(75, 20);
+            this.BtnEditar.TabIndex = 11;
+            this.BtnEditar.Text = "Editar";
+            this.BtnEditar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BtnEditar.UseAccentColor = false;
+            this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
-            // BORRAR
+            // BtnEliminar
             // 
-            this.BORRAR.HeaderText = "BORRAR";
-            this.BORRAR.MinimumWidth = 6;
-            this.BORRAR.Name = "BORRAR";
-            this.BORRAR.Width = 125;
+            this.BtnEliminar.AutoSize = false;
+            this.BtnEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnEliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BtnEliminar.Depth = 0;
+            this.BtnEliminar.HighEmphasis = true;
+            this.BtnEliminar.Icon = null;
+            this.BtnEliminar.Location = new System.Drawing.Point(575, 125);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.BtnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BtnEliminar.Size = new System.Drawing.Size(75, 20);
+            this.BtnEliminar.TabIndex = 12;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BtnEliminar.UseAccentColor = false;
+            this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // frmListaClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 516);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.btnSalir);
+            this.ClientSize = new System.Drawing.Size(756, 419);
+            this.Controls.Add(this.BtnEliminar);
+            this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.txtBuscarCliente);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.materialLabel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmListaClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Clientes";
             this.Load += new System.EventHandler(this.frmListaClientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,13 +273,13 @@
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton btnNuevo;
         private MaterialSkin.Controls.MaterialButton btnSalir;
-        private MaterialSkin.Controls.MaterialTextBox2 txtBuscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DOCUMENTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
-        private System.Windows.Forms.DataGridViewButtonColumn EDITAR;
-        private System.Windows.Forms.DataGridViewButtonColumn BORRAR;
+        private MaterialSkin.Controls.MaterialTextBox2 txtBuscarCliente;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtEmail;
+        private MaterialSkin.Controls.MaterialButton BtnEditar;
+        private MaterialSkin.Controls.MaterialButton BtnEliminar;
     }
 }
