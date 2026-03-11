@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace Pantallas_Sistema_Facturación
 {
+    
     public partial class FrmLogin : Form
     {
-        Conexion cn = new Conexion();
+        DatosLogin datos = new DatosLogin();
         public FrmLogin()
         {
             InitializeComponent();
@@ -35,21 +36,7 @@ namespace Pantallas_Sistema_Facturación
 
             try
             {
-                NpgsqlConnection conexion = cn.conectar();
-
-                string query = @"SELECT e.nombre, e.cargo
-                         FROM usuarios u
-                         INNER JOIN empleados e
-                         ON u.id_empleado = e.id_empleado
-                         WHERE u.usuario = @usuario 
-                         AND u.clave = @clave";
-
-                NpgsqlCommand cmd = new NpgsqlCommand(query, conexion);
-
-                cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
-                cmd.Parameters.AddWithValue("@clave", txtPassword.Text);
-
-                NpgsqlDataReader reader = cmd.ExecuteReader();
+                NpgsqlDataReader reader = datos.ValidarUsuario(txtUsuario.Text, txtPassword.Text);
 
                 if (reader.Read())
                 {
@@ -73,7 +60,7 @@ namespace Pantallas_Sistema_Facturación
                                     MessageBoxIcon.Error);
                 }
 
-                conexion.Close();
+                
             }
             catch (Exception ex)
             {

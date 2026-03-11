@@ -94,6 +94,8 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DatosLogin.cs" />
+    <Compile Include="DatosSeguridad.cs" />
     <Compile Include="FrmAcerca.cs">
       <SubType>Form</SubType>
     </Compile>
