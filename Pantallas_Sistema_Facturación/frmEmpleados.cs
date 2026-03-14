@@ -36,8 +36,7 @@ namespace Pantallas_Sistema_Facturación
         }
 
         private void frmEmpleados_Load(object sender, EventArgs e)
-        {
-            MostrarEmpleados();
+        {            
             ComboRol.Items.Add("Administrador");
             ComboRol.Items.Add("Vendedor");
             ComboRol.Items.Add("Cajero");
@@ -65,25 +64,9 @@ namespace Pantallas_Sistema_Facturación
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Empleado guardado correctamente");
-
+            
             cn.Close();
 
-        }
-
-        private void MostrarEmpleados()
-        {
-            NpgsqlConnection conexion = con.conectar();
-
-            string query = "SELECT * FROM empleados";
-
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter(query, conexion);
-            DataTable dt = new DataTable();
-
-            da.Fill(dt);
-
-            dgvEmpleados.DataSource = dt;
-
-            conexion.Close();
-        }
+        }       
     }
 }

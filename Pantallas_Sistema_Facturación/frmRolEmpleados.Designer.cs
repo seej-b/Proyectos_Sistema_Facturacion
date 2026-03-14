@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.cardRolEmpleados = new MaterialSkin.Controls.MaterialCard();
-            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.txtNombreRol = new MaterialSkin.Controls.MaterialTextBox2();
-            this.lblDescripcionRol = new System.Windows.Forms.Label();
             this.txtDescripcionRol = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.lblDescripcionRol = new System.Windows.Forms.Label();
+            this.txtNombreRol = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.btnActualizar = new MaterialSkin.Controls.MaterialButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialButton();
+            this.btnActualizar = new MaterialSkin.Controls.MaterialButton();
             this.cardRolEmpleados.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.SuspendLayout();
@@ -69,60 +69,6 @@
             this.cardRolEmpleados.Size = new System.Drawing.Size(604, 359);
             this.cardRolEmpleados.TabIndex = 1;
             // 
-            // materialCheckbox1
-            // 
-            this.materialCheckbox1.AutoSize = true;
-            this.materialCheckbox1.Depth = 0;
-            this.materialCheckbox1.Location = new System.Drawing.Point(14, 14);
-            this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox1.Name = "materialCheckbox1";
-            this.materialCheckbox1.ReadOnly = false;
-            this.materialCheckbox1.Ripple = true;
-            this.materialCheckbox1.Size = new System.Drawing.Size(35, 37);
-            this.materialCheckbox1.TabIndex = 0;
-            this.materialCheckbox1.UseVisualStyleBackColor = true;
-            // 
-            // txtNombreRol
-            // 
-            this.txtNombreRol.AnimateReadOnly = false;
-            this.txtNombreRol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtNombreRol.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtNombreRol.Depth = 0;
-            this.txtNombreRol.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtNombreRol.HideSelection = true;
-            this.txtNombreRol.LeadingIcon = null;
-            this.txtNombreRol.Location = new System.Drawing.Point(17, 72);
-            this.txtNombreRol.MaxLength = 32767;
-            this.txtNombreRol.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtNombreRol.Name = "txtNombreRol";
-            this.txtNombreRol.PasswordChar = '\0';
-            this.txtNombreRol.PrefixSuffixText = null;
-            this.txtNombreRol.ReadOnly = false;
-            this.txtNombreRol.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtNombreRol.SelectedText = "";
-            this.txtNombreRol.SelectionLength = 0;
-            this.txtNombreRol.SelectionStart = 0;
-            this.txtNombreRol.ShortcutsEnabled = true;
-            this.txtNombreRol.Size = new System.Drawing.Size(156, 48);
-            this.txtNombreRol.TabIndex = 1;
-            this.txtNombreRol.TabStop = false;
-            this.txtNombreRol.Text = "Nombre Rol";
-            this.txtNombreRol.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNombreRol.TrailingIcon = null;
-            this.txtNombreRol.UseSystemPasswordChar = false;
-            // 
-            // lblDescripcionRol
-            // 
-            this.lblDescripcionRol.AutoSize = true;
-            this.lblDescripcionRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionRol.Location = new System.Drawing.Point(17, 143);
-            this.lblDescripcionRol.Name = "lblDescripcionRol";
-            this.lblDescripcionRol.Size = new System.Drawing.Size(338, 32);
-            this.lblDescripcionRol.TabIndex = 2;
-            this.lblDescripcionRol.Text = "Descripción detallada Rol";
-            // 
             // txtDescripcionRol
             // 
             this.txtDescripcionRol.AnimateReadOnly = false;
@@ -148,6 +94,60 @@
             this.txtDescripcionRol.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtDescripcionRol.UseSystemPasswordChar = false;
             // 
+            // lblDescripcionRol
+            // 
+            this.lblDescripcionRol.AutoSize = true;
+            this.lblDescripcionRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcionRol.Location = new System.Drawing.Point(17, 143);
+            this.lblDescripcionRol.Name = "lblDescripcionRol";
+            this.lblDescripcionRol.Size = new System.Drawing.Size(338, 32);
+            this.lblDescripcionRol.TabIndex = 2;
+            this.lblDescripcionRol.Text = "Descripción detallada Rol";
+            // 
+            // txtNombreRol
+            // 
+            this.txtNombreRol.AnimateReadOnly = false;
+            this.txtNombreRol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtNombreRol.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtNombreRol.Depth = 0;
+            this.txtNombreRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNombreRol.HideSelection = true;
+            this.txtNombreRol.Hint = "Nombre Rol";
+            this.txtNombreRol.LeadingIcon = null;
+            this.txtNombreRol.Location = new System.Drawing.Point(17, 72);
+            this.txtNombreRol.MaxLength = 32767;
+            this.txtNombreRol.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtNombreRol.Name = "txtNombreRol";
+            this.txtNombreRol.PasswordChar = '\0';
+            this.txtNombreRol.PrefixSuffixText = null;
+            this.txtNombreRol.ReadOnly = false;
+            this.txtNombreRol.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtNombreRol.SelectedText = "";
+            this.txtNombreRol.SelectionLength = 0;
+            this.txtNombreRol.SelectionStart = 0;
+            this.txtNombreRol.ShortcutsEnabled = true;
+            this.txtNombreRol.Size = new System.Drawing.Size(156, 48);
+            this.txtNombreRol.TabIndex = 1;
+            this.txtNombreRol.TabStop = false;
+            this.txtNombreRol.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNombreRol.TrailingIcon = null;
+            this.txtNombreRol.UseSystemPasswordChar = false;
+            // 
+            // materialCheckbox1
+            // 
+            this.materialCheckbox1.AutoSize = true;
+            this.materialCheckbox1.Depth = 0;
+            this.materialCheckbox1.Location = new System.Drawing.Point(14, 14);
+            this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox1.Name = "materialCheckbox1";
+            this.materialCheckbox1.ReadOnly = false;
+            this.materialCheckbox1.Ripple = true;
+            this.materialCheckbox1.Size = new System.Drawing.Size(35, 37);
+            this.materialCheckbox1.TabIndex = 0;
+            this.materialCheckbox1.UseVisualStyleBackColor = true;
+            // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -163,6 +163,25 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(869, 169);
             this.materialCard1.TabIndex = 2;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalir.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnSalir.Depth = 0;
+            this.btnSalir.HighEmphasis = true;
+            this.btnSalir.Icon = null;
+            this.btnSalir.Location = new System.Drawing.Point(484, 20);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnSalir.Size = new System.Drawing.Size(64, 36);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnSalir.UseAccentColor = false;
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // btnActualizar
             // 
@@ -182,25 +201,6 @@
             this.btnActualizar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnActualizar.UseAccentColor = false;
             this.btnActualizar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSalir.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnSalir.Depth = 0;
-            this.btnSalir.HighEmphasis = true;
-            this.btnSalir.Icon = null;
-            this.btnSalir.Location = new System.Drawing.Point(484, 20);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSalir.Size = new System.Drawing.Size(158, 36);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnSalir.UseAccentColor = false;
-            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // frmRolEmpleados
             // 

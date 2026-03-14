@@ -46,7 +46,7 @@
             this.txtDocumento = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.lblAdministracionDeEmpleados = new System.Windows.Forms.Label();
-            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.BtnLimpiar = new MaterialSkin.Controls.MaterialButton();
             this.cardEmpleados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             // cardEmpleados
             // 
             this.cardEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cardEmpleados.Controls.Add(this.BtnLimpiar);
             this.cardEmpleados.Controls.Add(this.btnSalir);
             this.cardEmpleados.Controls.Add(this.btnActualizar);
             this.cardEmpleados.Controls.Add(this.txtDatos);
@@ -72,12 +73,12 @@
             this.cardEmpleados.Controls.Add(this.materialCheckbox1);
             this.cardEmpleados.Depth = 0;
             this.cardEmpleados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cardEmpleados.Location = new System.Drawing.Point(51, 81);
-            this.cardEmpleados.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.cardEmpleados.Location = new System.Drawing.Point(68, 71);
+            this.cardEmpleados.Margin = new System.Windows.Forms.Padding(14);
             this.cardEmpleados.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardEmpleados.Name = "cardEmpleados";
-            this.cardEmpleados.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
-            this.cardEmpleados.Size = new System.Drawing.Size(587, 383);
+            this.cardEmpleados.Padding = new System.Windows.Forms.Padding(14);
+            this.cardEmpleados.Size = new System.Drawing.Size(892, 471);
             this.cardEmpleados.TabIndex = 0;
             // 
             // btnSalir
@@ -87,8 +88,8 @@
             this.btnSalir.Depth = 0;
             this.btnSalir.HighEmphasis = true;
             this.btnSalir.Icon = null;
-            this.btnSalir.Location = new System.Drawing.Point(460, 318);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnSalir.Location = new System.Drawing.Point(609, 391);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -112,9 +113,9 @@
             this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnActualizar.Size = new System.Drawing.Size(109, 36);
+            this.btnActualizar.Size = new System.Drawing.Size(88, 36);
             this.btnActualizar.TabIndex = 14;
-            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Text = "Agregar";
             this.btnActualizar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnActualizar.UseAccentColor = false;
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -407,20 +408,30 @@
             this.lblAdministracionDeEmpleados.TabIndex = 1;
             this.lblAdministracionDeEmpleados.Text = "Administracion De Empleados";
             // 
-            // dgvEmpleados
+            // BtnLimpiar
             // 
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(51, 487);
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.Size = new System.Drawing.Size(587, 189);
-            this.dgvEmpleados.TabIndex = 2;
+            this.BtnLimpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnLimpiar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BtnLimpiar.Depth = 0;
+            this.BtnLimpiar.HighEmphasis = true;
+            this.BtnLimpiar.Icon = null;
+            this.BtnLimpiar.Location = new System.Drawing.Point(306, 391);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BtnLimpiar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BtnLimpiar.Size = new System.Drawing.Size(79, 36);
+            this.BtnLimpiar.TabIndex = 16;
+            this.BtnLimpiar.Text = "Limpiar";
+            this.BtnLimpiar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BtnLimpiar.UseAccentColor = false;
+            this.BtnLimpiar.UseVisualStyleBackColor = true;
             // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 706);
-            this.Controls.Add(this.dgvEmpleados);
+            this.ClientSize = new System.Drawing.Size(1026, 827);
             this.Controls.Add(this.lblAdministracionDeEmpleados);
             this.Controls.Add(this.cardEmpleados);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -455,6 +466,6 @@
         private System.Windows.Forms.DateTimePicker DateRetiro;
         private System.Windows.Forms.DateTimePicker DateIngreso;
         private System.Windows.Forms.Label lblAdministracionDeEmpleados;
-        private System.Windows.Forms.DataGridView dgvEmpleados;
+        private MaterialSkin.Controls.MaterialButton BtnLimpiar;
     }
 }
