@@ -10,7 +10,7 @@ namespace Pantallas_Sistema_Facturación
 {
     internal class Conexion
     {
-        string cadena = "Host=localhost;Port=5432;Database=SistemaFacturacion;Username=postgres;Password=1234";
+        string cadena = "Host=localhost;Port=5432;Database=Sistema;Username=postgres;Password=sebas123";
 
         public NpgsqlConnection conectar()
         {
